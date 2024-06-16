@@ -16,9 +16,9 @@ thích đa nền tảng cho MacOS cũng đã được thêm vào.
 - Bước 3: Người chơi sẽ build và run để chơi game.
 
 > ***Lưu ý:***
-- Do chương trình được chia nhiều file nên mất khoảng 40 giây để build và run. 
-- Người chơi cần chỉnh về ***bộ gõ VNI*** mới có thể thực hiện các bước di chuyển chính xác.
-- Khi bắt đầu chơi sẽ phóng to màn hình console để có giao diện dễ nhìn và đẹp mắt.
+> - Do chương trình được chia nhiều file nên mất khoảng 40 giây để build và run. 
+> - Người chơi cần chỉnh về ***bộ gõ VNI*** mới có thể thực hiện các bước di chuyển chính xác.
+> - Khi bắt đầu chơi sẽ phóng to màn hình console để có giao diện dễ nhìn và đẹp mắt.
 
 ## 3. Luật chơi 
 
