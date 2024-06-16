@@ -97,7 +97,7 @@ void redoTable(gamePlay2048& gameplay, myStack& undoStack, myStack& redoStack, i
         while (cannotRedo)
         {
             char noti = _getch();
-            if (noti != 'l')
+            if (noti != 'r')
             {
                 cannotRedo = 0;
             }
