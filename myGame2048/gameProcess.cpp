@@ -81,7 +81,7 @@ void GamePlayProcess()
             cout << COLOR_BACKGROUND_g << setw(19) << " " << RESET << endl;
         }
 
-        if (isGameOver(gameplay, tableSize))
+        if (isWinGame(gameplay, tableSize))
         {
             countWin++;
             steady_clock::time_point endTime = steady_clock::now(); // Đo thời gian lúc kết thúc chơi
@@ -105,7 +105,7 @@ void GamePlayProcess()
             gotoxy(43, 35);
             cout << COLOR_BACKGROUND_r << setw(85) << " " << RESET << endl;
         }
-        if (isWinGame(gameplay, tableSize))
+        if (isGameOver(gameplay, tableSize))
         {
             steady_clock::time_point endTime = steady_clock::now(); // Đo thời gian lúc kết thúc chơi
             duration<float> elapsedTime = endTime - startTime;      // Khoảng thời gian tính được
