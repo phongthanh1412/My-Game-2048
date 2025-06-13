@@ -1,211 +1,175 @@
-﻿# GAME 2048
----
-# I. GIỚI THIỆU
----
-## 1. Tác giả
+# 2048 GAME
 
-- Họ và tên: Nguyễn Thanh Phong
-- MSSV: 23120154
-- Lớp: 23CTT2
-## 2. Cài đặt
-Trò chơi và mã được thiết kế để chạy nguyên bản bằng ***Visual Studio*** trên các nền tảng ***Windows***, nhưng tính tương 
-thích đa nền tảng cho MacOS cũng đã được thêm vào.
-Để có thể trải nghiệm trò chơi thì người dùng cần cài đặt như sau:
-- Bước 1: Tải source code về máy.
-- Bước 2: Giải nén tập tin `23120154.zip` và mở tệp `myGame2048.sln`.
-- Bước 3: Người chơi sẽ build và run để chơi game.
+# I. INTRODUCTION
 
-> ***Lưu ý:***
-> - Do chương trình được chia nhiều file nên mất khoảng 40 giây để build và run. 
-> - Người chơi cần chỉnh về ***bộ gõ VNI*** mới có thể thực hiện các bước di chuyển chính xác.
-> - Khi bắt đầu chơi sẽ phóng to màn hình console để có giao diện dễ nhìn và đẹp mắt.
+## 1. Author
 
-## 3. Luật chơi 
+- Full Name: Nguyễn Thanh Phong
+- Student ID: 23120154
+- Class: 23CTT2
 
-Trong trò chơi này, người chơi kết hợp các ô có cùng số cho đến khi đạt được giá trị ***2048***. 
-Các ô chỉ chứa các giá trị nguyên bắt đầu từ ***2 hoặc 4***, hoặc ***2 và 4***
-là các lũy thừa của 2, chẳng hạn như ***2, 4, 8, 16, 32, 64, 128, v.v.***
+## 2. Installation
+The game and its code are designed to run natively using ***Visual Studio*** on ***Windows*** platforms, with added cross-platform compatibility for macOS.  
+To experience the game, users should follow these steps:  
+- **Step 1**: Download the source code to your computer.  
+- **Step 2**: Extract the `23120154.zip` file and open the `myGame2048.sln` file.  
+- **Step 3**: Build and run the program to start playing.
+
+> ***Notes:***  
+> - As the program is divided into multiple files, it may take approximately 40 seconds to build and run.  
+> - Players must switch to the ***VNI typing method*** to perform movements accurately.  
+> - Upon starting the game, the console window will be enlarged for a clear and visually appealing interface.
+
+## 3. Game Rules
+
+In this game, players combine tiles with the same numbers until they reach the value of ***2048***.  
+Tiles contain integer values starting from ***2 or 4***, which are powers of 2, such as ***2, 4, 8, 16, 32, 64, 128, etc.***
 
 <div align="center">
   <img src="images/a7.png" alt="a7">
 </div>
 
-## 4. Các chức năng hoàn thành 
+## 4. Completed Features
 
-| Chức năng                                                                                                      | Hoàn thành  |
+| Feature                                                                                                        | Completed   |
 |----------------------------------------------------------------------------------------------------------------|-------------|
-| Hiển thị được giao diện kèm chức năng của hai màn hình chính                                                   | x           |
-| Thực hiện được chức năng nhập tên và kiểm tra tính trùng lắp                                                   | x           |
-| Thực hiện được chức năng cài đặt độ lớn của bàn cờ                                                             | x           |
-| Thực hiện được việc lưu trữ thông tin người chơi                                                               | x           |
-| Thực hiện được chức năng Resume                                                                                |             |
-| Thực hiện được chức năng Exit                                                                                  | x           |
-| Thực hiện được logic trong trò chơi như phát sinh ngẫu nhiên, di chuyển, hiển thị trò chơi, hiển thị điểm, v.v | x           |
-| Thực hiện được chức năng undo, undo và redo                                                                    | x           |
-| Hiển thị các thông báo và nội dung tương ứng                                                                   | x           |
-| Tổ chức thành các file rõ ràng                                                                                 | x           |
-| Có sử dụng phương thức đồ hoạ kèm giao diện thân thiện                                                         | x           |
-| Cài đặt được cách thức mã hoá tệp tin                                                                          |             |
-| Cài đặt được chức năng Resume cho năm tài khoản                                                                |             |
-
----
-## 5. Xây dựng bởi 
-
-- Công cụ: Visual Studio 2022
-- Ngôn ngữ: C++;
-- Hệ điều hành: Window 10 
-
-# II. CHI TIẾT VỀ ĐỒ ÁN
-
-## 1. Thư mục dự án 
-
-Thư mục ***myGame2048*** sẽ chứa tập tin `readme.md`, thư mục ảnh minh hoạ cho dự án,
-mã nguồn chính và tập tin `myGame2048.sln` để mở toàn bộ dự án.
-
-## 2. Mã nguồn dự án
-
-- `README.md` để ghi tất cả thông tin về dự án, cách cài đặt, build chương trình cùng một số
-lưu ý khác.
-- `funtions.h` dùng để khai báo các các thư viện cần sử dụng cho dự án, định nghĩa các mã 
-***ANSI ESCAPE CODE*** to màu sắc cho các đối tượng trong dự án. Bên cạnh đó còn khai báo và xây dựng
-cấu trúc cho stack, người chơi, trạng thái game cùng một số hàm liên quan đến thông tin người 
-chơi và màn hình thắng - thua game.
-- `gameLogic.h`dùng để khai báo các hàm cốt lõi cho game như di chuyển, hợp nhất các ô...
-- `prepareForGame.h` dùng để khai báo các hàm thao tác chuẩn bị đăng nhập để bắt đầu chơi.
-- `undo_redo.h`để khai báo các hàm chức năng quay lại trạng thái trước đó sau một số nước đi
-nhất định.
-- Thư mục ***myGame2048*** sẽ chứa các mã nguồn `.cpp` tương ứng với từng hàm trong dự án và
-tập tin nhị phân `list_top20_players.bin` để lưu trữ thông tin người chơi.
-
-## 3. Các giao diện game 2048
+| Display the interface with functionality for two main screens                                                  | x           |
+| Implement username input and check for duplicates                                                              | x           |
+| Implement board size configuration                                                                             | x           |
+| Implement storage of player information                                                                        | x           |
+| Implement Resume function                                                                                      |             |
+| Implement Exit function                                                                                        | x           |
+| Implement game logic such as random generation, movement, game display, score display, etc.                     | x           |
+| Implement undo, undo, and redo functions                                                                        | x           |
+| Display relevant notifications and content                                                                     | x           |
+| Organize code into clear files                                                                                  | x           |
+| Use graphical methods with a user-friendly interface                                                            | x           |
+| Implement file encryption method                                                                               |             |
+| Implement Resume function for five accounts                                                                    |             |
 
 
-- Màn hình ***giới thiệu*** cùng hiệu ứng thay đổi màu sắc: 
+## 5. Built With
+
+- Tool: Visual Studio 2022
+- Language: C++
+- Operating System: Windows 10
+
+# II. PROJECT DETAILS
+
+## 1. Project Directory
+
+The ***myGame2048*** directory contains the `readme.md` file, a folder with illustrative images for the project, the main source code, and the `myGame2048.sln` file to open the entire project.
+
+## 2. Project Source Code
+
+- `README.md`: Contains all project information, installation instructions, program build steps, and additional notes.  
+- `functions.h`: Declares the libraries used in the project, defines ***ANSI ESCAPE CODE*** for coloring objects, and builds structures for stack, player, game state, along with functions related to player information and win/lose screens.  
+- `gameLogic.h`: Declares core game functions such as movement and tile merging.  
+- `prepareForGame.h`: Declares functions for login preparation to start the game.  
+- `undo_redo.h`: Declares functions for reverting to previous states after certain moves.  
+- The ***myGame2048*** directory contains the corresponding `.cpp` source files for each function and the binary file `list_top20_players.bin` to store player information.
+
+## 3. 2048 Game Interfaces
+
+- ***Introduction*** screen with color-changing effects:
 
 <div align="center">
   <img src="images/vid1.gif" alt="GIF">
 </div>
 
-> Sẽ có hiệu hứng thay đồi màu sắc và hiệu ứng chuyển cảnh giữa các màn hình 
-với nhau. 
+> Color-changing effects and transitions between screens are included.
 
 <div align="center">
   <img src="images/vid2.gif" alt="GIF">
 </div>
 
-- Khi mở màn, người chơi sẽ được yêu cầu nhấn phím ***'Enter'*** để xem phần giới thiệu game 2048.
+- Upon opening, players are prompted to press ***'Enter'*** to view the 2048 game introduction.
 
 <div align="center">
   <img src="images/a0.png" alt="a0">
 </div>
 
-
-- Người chơi nhấn ***'Enter'*** để đi đến ***cửa sổ chính*** game 2048.
+- Press ***'Enter'*** to navigate to the ***main window*** of the 2048 game.
 
 <div align="center">
   <img src="images/a2.png" alt="a2">
 </div>
 
-> ***Lưu ý khi chọn các chỉ mục*** 
-- Người chơi sẽ thực hiện các thao tác nhấn mũi tên ***"lên, xuống, trái, phải"*** ứng
-với mã ASCII ***'72, 80, 75, 77'*** để di chuyển giữa các chỉ mục.
-và nhấn ***'Enter'*** để biểu thị mình đã chọn chỉ mục đó. Sau khi hoàn thành các thao tác
-trong chỉ mục đã chọn, thì nếu là chỉ mục ***'Tutorial'*** và ***'Top-20 list'*** thì người chơi 
-chỉ cần nhấn ***'Enter'*** để quay lại cửa sổ chính game 2048.
-- Đối với các thao tác trong chỉ mục ***'New game'*** thì người chơi buộc phải đăng nhập tài khoản
-rồi chơi, sau ván chơi đó mới quay trở lại cửa sổ chính game 2048.
-- Đối với chỉ mục ***'Game settings'***, sau mỗi lần chọn các chỉ mục con của ***'Game settings'***
-thì nhấn ***'Enter'*** chỉ 1 lần để hiện thông báo thao tác thành công, sau đó cần dùng các ***'mũi tên lên/ xuống'*** 
-để di chuyển đến chỉ mục con ***'Go back to main menu screen'*** rồi mới nhấn ***'Enter'*** để quay
-lại cửa sổ chính game 2048.
+> ***Notes on selecting menu items***  
+- Players use the ***up, down, left, right*** arrow keys (corresponding to ASCII codes ***'72, 80, 75, 77'***) to navigate between menu items and press ***'Enter'*** to select an item.  
+- For the ***'Tutorial'*** and ***'Top-20 list'*** items, press ***'Enter'*** to return to the main 2048 game window after completing actions.  
+- For the ***'New game'*** item, players must log in and play a game before returning to the main window.  
+- For the ***'Game settings'*** item, after selecting sub-items, press ***'Enter'*** once to display a success message, then use the ***up/down arrows*** to navigate to the ***'Go back to main menu screen'*** sub-item and press ***'Enter'*** to return to the main window.
 
-### 3.1. Tutorial  
+### 3.1. Tutorial
 
-- Người chơi được xem hướng dẫn luật chơi và cách di chuyển, cách thoát game và các thao tác khác.
+- Players can view instructions on game rules, movement, exiting the game, and other operations.
 
 <div align="center">
   <img src="images/a3.png" alt="a3">
 </div>
 
-### 3.2. Game settings  
+### 3.2. Game Settings
 
-- Người chơi sẽ cài đặt chế độ ***undo/ redo*** và điều chỉnh kích thước bảng trò chơi 2048. Nếu
-ban đầu người chơi không vào phần cài đặt này thì chức năng ***undo/redo*** mặc định sẽ ***tắt***
-và kích thước bảng mặc định là ***4 x 4***.
+- Players can enable/disable the ***undo/redo*** mode and adjust the 2048 game board size. If not configured initially, the ***undo/redo*** function is ***disabled*** by default, and the board size is set to ***4 x 4***.
 
 <div align="center">
   <img src="images/a5.png" alt="a5">
 </div>
 
-- Sau khi bật chức năng undo/redo thì trong quá trình chơi, người chơi
-có thể ***quay lại các nước đi trước đó***. Khi undo lại trạng thái ban đầu thì
-không thể undo được nữa, nếu không sẽ báo lỗi.
+- When the undo/redo function is enabled, players can ***revert to previous moves*** during gameplay. Attempting to undo beyond the initial state will result in an error.
 
 <div align="center">
   <img src="images/c2.png" alt="c2">
 </div>
 
-- Tương tự với undo, redo sẽ ***quay lại trạng thái vừa undo***, khi 
-quay lại hết trạng thái undo thì không thể redo được nữa. Hơn nữa
-nếu có bất kỳ bước di chuyển nào ***chèn giữa*** undo và redo thì cũng 
-không thể redo được. Nếu không sẽ báo lỗi.
+- Similarly, redo allows players to ***return to states undone***. If all undone states are redone, further redo attempts will result in an error. Additionally, if any move is made between undo and redo, redo becomes unavailable, resulting in an error.
 
 <div align="center">
   <img src="images/c3.png" alt="c3">
 </div>
 
-- Sau khi ***bật*** chức năng undo/redo thì ***được phép*** undo và redo. 
-Thông báo như sau:
+- When the ***undo/redo*** function is ***enabled***, both undo and redo are allowed. The notification is as follows:
 
 <div align="center">
   <img src="images/c5.png" alt="c5">
 </div>
 
-- Sau khi ***bật*** chức năng undo thì ***chỉ được phép*** undo trong lúc chơi,
-***không cho phép*** redo. Thông báo như sau:
+- When only the ***undo*** function is enabled, ***redo*** is not allowed. The notification is as follows:
 
 <div align="center">
   <img src="images/c4.png" alt="c4">
 </div>
 
-- Nếu ***không*** cài đặt phần này thì chức năng undo/redo sẽ
-***tắt***. Thông báo như sau:
+- If this section is not configured, the undo/redo function remains ***disabled***. The notification is as follows:
 
 <div align="center">
   <img src="images/c1.png" alt="c1">
 </div>
 
-
-- Ví dụ sau khi chọn kích thước bảng ***7 x 7***
+- Example of selecting a ***7 x 7*** board size:
 
 <div align="center">
   <img src="images/b7.png" alt="b7">
 </div>
 
+### 3.3. Top-20 List
 
-### 3.3. Top-20 list
-
-- Bảng xếp hạng 20 người chơi có số điểm cao nhất giảm dần từ trên 
-xuống dưới. Nếu có 2 người chơi nào có số ***điểm trùng nhau*** thì ai có 
-thời gian chơi ***ít hơn*** thì họ sẽ được xếp ở ***top cao hơn***.
+- A leaderboard displaying the top 20 players with the highest scores, sorted in descending order. If two players have the same ***score***, the player with the ***shorter playtime*** is ranked higher.
 
 <div align="center">
   <img src="images/b5.png" alt="b5">
 </div>
 
-### 3.4. New game  
+### 3.4. New Game
 
-- Người chơi bắt đầu đăng nhập tài khoản để chơi. Hệ thống yêu cầu người chơi nhập 
-tên tài khoản và mật khẩu để ghi nhận thông tin. 
+- Players start by logging into an account. The system requires a username and password to record information.  
 
-- Tên đăng nhập hợp lệ khi thoả mãn có ***độ dài từ 1 đến 14 ký tự***, bao gồm kí tự trong 
-bảng ***chữ cái hoặc chữ số hoặc kết hợp cả hai***. Đồng thời, tên người chơi mới không được
-phép ***trùng*** với người chơi trước đang nằm trong top 20 người chơi có điểm số cao nhất.
+- A valid username must be ***1 to 14 characters long***, consisting of ***letters, numbers, or a combination of both***, and must not ***duplicate*** any username in the top 20 high-score list.  
 
-- Mật khẩu hợp lệ thì không được ***bỏ trống***
-(tức ký tự rỗng).
+- A valid password must not be ***empty*** (i.e., no blank input).  
 
-- Đăng nhập không thành công sẽ xuất hiện các thông báo lỗi: 
+- Failed login attempts will display error messages:
 
 <div align="center">
   <img src="images/a8.png" alt="a8">
@@ -215,115 +179,98 @@ phép ***trùng*** với người chơi trước đang nằm trong top 20 ngư�
   <img src="images/a9.png" alt="a9">
 </div>
 
-
-- Đăng nhập thành công sẽ hiện thông báo và đi đến màn hình game 2048 
-chính thức:
+- A successful login will display a notification and proceed to the official 2048 game screen:
 
 <div align="center">
   <img src="images/a6.png" alt="a6">
 </div>
 
-### 3.5. Màn game hình chính thức
+### 3.5. Official Game Screen
 
-- Người chơi sau khi đăng nhập thành công sẽ đến giao diện chính thức
-game 2048 để bắt đầu chơi.
-- Người chơi sẽ dùng các phím mũi tên ***'w','s','a','d'*** để di chuyển lên, xuống, 
-trái, phải để gộp các ô lại với nhau.
-- Sử dụng phím **'u'** để undo, phím ***'r'*** để redo và phím ***'n'*** để restart khởi tạo
-trạng thái game mới. 
-- Nếu đang chơi mà người chơi muốn thoát trước khi thắng hoặc thua
-thì nhấn phím ***'e'*** đại diện cho exit. Sau đó có bảng xác nhận thoát game
-bằng cách nhấn ***'n'*** nếu không muốn thoát và tiếp tục chơi, ngược lại
-nếu nhấn ***'y'*** tức đồng ý thoát game.
-- Xuất hiện thông báo yêu cầu người chơi nhấn ***'Enter'*** để đi tới màn hình
-kết thúc.
+- After a successful login, players reach the official 2048 game interface to start playing.  
+- Players use the ***'w', 's', 'a', 'd'*** keys to move up, down, left, or right to merge tiles.  
+- Use the ***'u'*** key to undo, ***'r'*** to redo, and ***'n'*** to restart with a new game state.  
+- To exit before winning or losing, press ***'e'*** for exit, followed by a confirmation prompt: press ***'n'*** to continue playing or ***'y'*** to confirm exit.  
+- A notification will prompt players to press ***'Enter'*** to proceed to the end screen.
 
 <div align="center">
   <img src="images/b6.png" alt="b6">
 </div>
 
-### 3.6. Màn hình kết thúc:
+### 3.6. End Screen
 
 <div align="center">
   <img src="images/c0.png" alt="c0">
 </div>
 
-- Lúc này người chơi sẽ thoát chính thức cả trò chơi bằng cách nhấn **'e'**,
-hoặc tiếp tục bằng cách đăng ký tài khoản mới để chơi bằng cách nhấn ***'Enter'***.
+- Players can officially exit the game by pressing ***'e'*** or continue by registering a new account to play by pressing ***'Enter'***.
 
-> Lưu ý khi nhấn ***'Enter'*** để chơi tiếp thì phải chơi đến hết ván game của mình. Sau đó cũng 
-phải nhấn e để xác nhận thoát game 1 lần nữa. Chỉ khi thoát chương trình thì bộ nhớ mới được
-hoàn toàn giải phóng. 
-### 3.7. Thắng game
+> Note: When pressing ***'Enter'*** to continue, players must complete the game session. Afterward, they must press ***'e'*** again to confirm exiting. Memory is fully released only when the program is terminated.
 
-- Khi người chơi đạt đến số điểm 2048 thì ***tạm dừng*** ván đó với câu chúc mừng. 
+### 3.7. Winning the Game
+
+- When a player reaches a score of 2048, the game ***pauses*** with a congratulatory message.
 
 <div align="center">
   <img src="images/b2.png" alt="b2">
 </div>
 
-> Ví dụ minh hoạ giao diện thắng game
+> Example of the win screen interface:
 
 <div align="center">
   <img src="images/vid3.gif" alt="vid3">
 </div>
 
-- Người chơi nếu muốn chơi tiếp thì nhấn các ***phím điều khiển*** để tiếp tục chơi đến khi
-***thua*** hoặc đến khi người chơi ***nhấn exit*** để dừng.
+- To continue playing, players can press ***control keys*** to keep going until they ***lose*** or choose to ***exit***.
 
 <div align="center">
   <img src="images/b3.png" alt="b3">
 </div>
 
-### 3.8. Thua game
+### 3.8. Losing the Game
 
-- Khi người chơi không thể di chuyển thêm bước nào được nữa do bảng đã đầy kín các ô đôi một
-khác nhau. Ván chơi kểt thúc.
+- The game ends when no further moves are possible because the board is filled with distinct tiles.
 
 <div align="center">
   <img src="images/b0.png" alt="b0">
 </div>
 
-> Ví dụ minh hoạ giao diện thua game
+> Example of the lose screen interface:
 
 <div align="center">
   <img src="images/vid4.gif" alt="vid4">
 </div>
 
-## 4. Lưu trữ thông tin
+## 4. Information Storage
 
-Danh sách top 20 người chơi có điểm cao nhất sẽ được lưu trữ trong tập tin nhị phân
-`list_top20_players.bin` trong thư mục ***myGame2048***, nằm cùng thư mục với các mã nguồn
-`.cpp`.
+The list of the top 20 players with the highest scores is stored in the binary file `list_top20_players.bin` in the ***myGame2048*** directory, alongside the `.cpp` source files.
 
-## 5. Video các thông tin về đồ án
+## 5. Project Information Video
 
-- [Video về đồ án game 2048](https://drive.google.com/drive/folders/1N995UlKJJ2HTx7n0JJ-24rFjdvwEl71G?q=sharedwith:public%20parent:1N995UlKJJ2HTx7n0JJ-24rFjdvwEl71G).
+- [Video about the 2048 game project](https://drive.google.com/drive/folders/1N995UlKJJ2HTx7n0JJ-24rFjdvwEl71G?q=sharedwith:public%20parent:1N995UlKJJ2HTx7n0JJ-24rFjdvwEl71G).
 
----
 
-# III. PHỤ LỤC
 
----
-## 1. Các thư viện sử dụng
+# III. APPENDIX
 
-- `iostream` để xử lý nhập xuất dữ liệu.
-- `ctime` cung cấp các hàm liên quan đến thời gian.
-- `cstdlib` để sinh số ngẫu nhiên, tính toán số học.
-- `conio.h` để đọc phím bấm, xử lý dữ liệu không đồng bộ.
-- `iomanip` giúp việc định dạng dữ liệu rõ ràng và dễ nhìn hơn
-- `fstream` để xử lý nhập xuất file.
-- `sstream` để đơn giản việc đọc chuỗi gồm các ký tự đặc biệt.
-- `string` để có thể sử dụng chuỗi và các hàm đã cài đặt sẵn cho chuỗi.
-- `chrono` cung cấp các tiện ích để làm việc với thời gian đồng hồ (steady clock),
-tính toán khoảng thời gian giữa hai thời điểm.
-- `thread` để quản lý luồng thời gian. 
-- `windows.h`để có thể sử dụng các hàm chỉ riêng cho hệ điều hành Window.
 
-## 2. Tài liệu tham khảo
+## 1. Libraries Used
 
-- https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
-- https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
-- https://stackoverflow.com/questions/48720622/undo-operation-implementation-in-2048-game
+- `iostream`: Handles data input and output.  
+- `ctime`: Provides time-related functions.  
+- `cstdlib`: Supports random number generation and mathematical calculations.  
+- `conio.h`: Reads key presses and handles asynchronous data.  
+- `iomanip`: Enhances data formatting for clarity and readability.  
+- `fstream`: Manages file input and output.  
+- `sstream`: Simplifies reading strings with special characters.  
+- `string`: Enables string usage and built-in string functions.  
+- `chrono`: Provides utilities for working with steady clock time and calculating time intervals.  
+- `thread`: Manages time threads.  
+- `windows.h`: Provides functions specific to the Windows operating system.
+
+## 2. References
+
+- https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797  
+- https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20  
+- https://stackoverflow.com/questions/48720622/undo-operation-implementation-in-2048-game  
 - https://www.quora.com/How-do-I-make-a-2048-game-in-C++-What-is-the-algorithm
----
